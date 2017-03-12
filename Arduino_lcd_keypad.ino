@@ -3,7 +3,8 @@
 #include <Keypad.h>
 
 
-LiquidCrystal_I2C lcd(0x27,20,4);
+//LiquidCrystal_I2C lcd(0x27,20,4);
+LiquidCrystal_I2C lcd(0x3f,16,2); //yeni lcd icin eklenen kodlar
 
 int sayac;
 char array_tc[13];
@@ -19,8 +20,11 @@ char keys[SATIR][SUTUN] = {
 
 
 
-byte rowPins[SATIR] = { 9, 8, 7, 6 };
-byte colPins[SUTUN] = { 12, 11, 10 }; 
+//byte rowPins[SATIR] = { 9, 8, 7, 6 };
+//byte colPins[SUTUN] = { 12, 11, 10 }; 
+
+byte rowPins[SATIR] = { 6, 7, 8, 9 };
+byte colPins[SUTUN] = { 10, 11, 12 }; 
 
 
 Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, SATIR, SUTUN );
